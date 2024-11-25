@@ -1,0 +1,5 @@
+google-generativeai
+streamlit
+gtts
+IPython
+# Any other dependencies your app requires
