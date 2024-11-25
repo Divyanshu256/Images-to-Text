@@ -1,10 +1,8 @@
 import streamlit as st
-import pathlib
 import textwrap
 import google.generativeai as genai
 from IPython.display import Markdown
 from gtts import gTTS
-from IPython.display import Audio
 import PIL.Image
 import os
 
@@ -15,14 +13,14 @@ def to_markdown(text):
 
 # Streamlit app layout
 def main(model):
-    st.title("Gemini 1.0 Pro Vision - Image Analysis and Text Generation")
+    st.title("Gemini 1.5 Flash - Image Analysis and Text Generation")
     
     # File uploader for images
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png"])
 
     if uploaded_file is not None:
         # Display the uploaded image
-        st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
+        st.image(uploaded_file, caption='Uploaded Image', use_container_width=True)
         
         # Load the image for processing
         img = PIL.Image.open(uploaded_file)
@@ -45,12 +43,12 @@ def main(model):
         
 if __name__ == "__main__":
     # Load API key from environment variable (for security)
-    fetcheed_api_key = os.getenv("API_KEY")  # Replace with your actual environment variable or key
-    genai.configure(api_key=fetcheed_api_key)
+    fetched_api_key = os.getenv("API_KEY")  # Replace with your actual environment variable or key
+    genai.configure(api_key=fetched_api_key)
     
     try:
-        # Load the Gemini model
-        model = genai.GenerativeModel('gemini-1.0-pro-vision-latest')
+        # Load the Gemini model (update to the new version)
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
         # Run the Streamlit app
         main(model)
