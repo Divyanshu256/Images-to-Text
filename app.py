@@ -45,7 +45,7 @@ def main(model):
         
 if __name__ == "__main__":
     # Load API key from environment variable (for security)
-    fetcheed_api_key = os.getenv("API_KEY", "your-api-key-here")  # Replace with your actual environment variable or key
+    fetcheed_api_key = os.getenv("API_KEY")  # Replace with your actual environment variable or key
     genai.configure(api_key=fetcheed_api_key)
     
     try:
