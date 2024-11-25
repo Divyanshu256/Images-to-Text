@@ -44,7 +44,7 @@ def main():
         
 if __name__ == "__main__":
     # Configure Google API key
-    fetcheed_api_key = os.getenv("API_KEY")
+    fetcheed_api_key = "AIzaSyDRjH6H1fMCsGsWlvh70D6pHahTzhsVCaM"
     genai.configure(api_key = fetcheed_api_key)
     
     # List available models
